@@ -1,0 +1,16 @@
+version: '1.0'
+services:
+  local_pipe:
+    restart: always
+    image: wisquimas/local_pipe:latest
+    container_name: local_pipe
+    ports:
+      - '9999:80'
+    volumes:
+      - '~/Documents/localhost/phpAPI/pipe/:/var/www/html/pipe/'
+      #- '~/Documents/localhost/phpAPI/:/var/www/html/'
+    networks:
+      bridge_dev:
+networks:
+  bridge_dev:
+    external: true
